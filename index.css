@@ -13,6 +13,12 @@ body {
     background-color: aliceblue;
     border-top: 1px solid lightgray;
 }
+<<<<<<< HEAD
+.tools button{
+    background-color: aliceblue;
+}
+=======
+>>>>>>> feca3536b1a6979318f98ab983506b1d84d91915
 
 .bar {
     background-color: aliceblue;
@@ -26,7 +32,10 @@ body {
 
 .bar td {
     text-align: center;
+<<<<<<< HEAD
+=======
     
+>>>>>>> feca3536b1a6979318f98ab983506b1d84d91915
 }
 
 .bar .clipboard {
@@ -48,6 +57,20 @@ body {
 .bar .colors {
     width: 35%; 
 }
+<<<<<<< HEAD
+.can {
+    width: 93%;
+    height: 100vh;
+    padding-top:2%;
+    padding-left:2%;
+    padding-right:5%;
+}
+
+canvas {
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+=======
 
 .cana {
     padding: 20px;
@@ -63,6 +86,7 @@ canvas {
     background-color: white;
     width: 100%;
     height: 1000px;
+>>>>>>> feca3536b1a6979318f98ab983506b1d84d91915
 }
 
 .app {
@@ -97,6 +121,13 @@ td {
     border: 1px solid gray;
 }
 
+<<<<<<< HEAD
+.colors button:hover, .table10 button:hover, .table11 button:hover,.tools button:hover {
+    border: 2px solid black;
+}
+
+=======
+>>>>>>> feca3536b1a6979318f98ab983506b1d84d91915
 th {
     background-color: #f2f2f2;
 }
@@ -119,6 +150,44 @@ button {
 .actions td:hover {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
+<<<<<<< HEAD
+.size {
+    width: 50px;
+}
+
+.size td {
+    width: 50px;  
+}
+
+#size-tab1 {
+    width: 50px;
+    height: 2px;
+    border: 1px solid black;
+    background-color: black;
+}
+
+#size-tab2 {
+    width: 50px;
+    height: 5px;
+    border: 1px solid black;
+    background-color: black;
+}
+
+#size-tab3 {
+    width: 50px;
+    height: 8px;
+    border: 1px solid black;
+    background-color: black;
+}
+
+#size-tab4 {
+    width: 50px;
+    height: 10px;
+    border: 1px solid black;
+    background-color: black;
+}
+
+=======
 
 .tool input {
     display: none;
@@ -160,6 +229,7 @@ button {
     border:1px solid black;
     background-color: black;
 }
+>>>>>>> feca3536b1a6979318f98ab983506b1d84d91915
 .size td:hover {
     background-color: gray;
 }
@@ -170,7 +240,11 @@ button {
 
 @media (max-width: 768px) {
     .container {
+<<<<<<< HEAD
+        flex-direction: row;
+=======
         flex-direction:row;
+>>>>>>> feca3536b1a6979318f98ab983506b1d84d91915
         align-items: center;
     }
 
@@ -186,4 +260,18 @@ button {
         padding-top: 5%;
     }
 }
+<<<<<<< HEAD
+.tool button{
+
+    background-color:aliceblue;
+  
+}
+.tool button:hover{
+    
+    border:2px solid black;
+    border-radius:50%;
+}
+
+=======
+>>>>>>> feca3536b1a6979318f98ab983506b1d84d91915
 
