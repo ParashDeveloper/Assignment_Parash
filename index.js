@@ -56,6 +56,29 @@ canvas.addEventListener('mouseenter', (e) => {
     }
 });
 
+// Touch event handlers
+canvas.addEventListener('touchstart', (e) => {
+    isDrawing = true;
+    drawTouch(e);
+});
+
+canvas.addEventListener('touchmove', (e) => {
+    if (isDrawing) {
+        drawTouch(e);
+    }
+});
+
+canvas.addEventListener('touchend', () => {
+    isDrawing = false;
+    ctx.beginPath();
+    saveCanvasState();
+});
+
+canvas.addEventListener('touchcancel', () => {
+    isDrawing = false;
+    ctx.beginPath();
+});
+
 sizeTabs.forEach((tab, index) => {
     tab.addEventListener('click', () => {
         currentSize = (index + 1) * 2; // Size 2, 4, 6, 8
@@ -113,7 +136,6 @@ resizeButton.addEventListener('click', () => {
     }
 });
 
-
 eraserButton.addEventListener('click', () => {
     isEraser = true;
     currentSize = 10;
@@ -130,7 +152,7 @@ window.addEventListener('beforeunload', () => {
     saveCanvasToLocalStorage();
 });
 
-// Drawing function
+// Drawing function for mouse
 function draw(e) {
     const rect = canvas.getBoundingClientRect();
     const scaleX = canvas.width / rect.width;
@@ -146,6 +168,27 @@ function draw(e) {
     ctx.stroke();
     ctx.beginPath();
     ctx.moveTo(x, y);
+}
+
+// Drawing function for touch
+function drawTouch(e) {
+    const touch = e.touches[0];
+    const rect = canvas.getBoundingClientRect();
+    const scaleX = canvas.width / rect.width;
+    const scaleY = canvas.height / rect.height;
+    const x = (touch.clientX - rect.left) * scaleX;
+    const y = (touch.clientY - rect.top) * scaleY;
+
+    ctx.lineWidth = currentSize;
+    ctx.lineCap = 'round';
+    ctx.strokeStyle = isEraser ? 'white' : currentColor;
+
+    ctx.lineTo(x, y);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(x, y);
+
+    e.preventDefault(); // Prevent scrolling on touch devices
 }
 
 // Save canvas state
@@ -193,4 +236,3 @@ loadCanvasFromLocalStorage();
 if (canvasState.length === 0) {
     saveCanvasState();
 }
-
